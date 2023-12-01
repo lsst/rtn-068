@@ -1,1 +1,2 @@
-documenteer[technote]<1
+ltd-conveyor
+documenteer[technote]

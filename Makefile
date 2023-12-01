@@ -31,8 +31,10 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-html:
+html: pop.csv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cp pop.csv $(BUILDDIR)/html
+	cp _static/rubin_logo.png $(BUILDDIR)/html/_static/lsst-logo-dark.svg
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
@@ -56,3 +58,12 @@ refresh-bib:
 	refresh-lsst-bib -d lsstbib
 	@echo
 	@echo "Commit the new bibliographies: git add lsstbib && git commit -m \"Update bibliographies.\""
+
+pop.csv:
+	pip install -r operations_milestones/requirements.txt
+	( \
+                . operations_milestones/venv/bin/activate; \
+                python operations_milestones/opsMiles.py --pop -q "and filter=23438"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
+        )
+	echo `date` >> index.rst
+

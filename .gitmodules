@@ -1,0 +1,3 @@
+[submodule "operations_milestones"]
+	path = operations_milestones
+	url = git@github.com:womullan/operations_milestones.git
