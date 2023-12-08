@@ -37,6 +37,11 @@ jobs:
           (cd operations_milestones; git pull origin main)
           make html
 
+      - name: Public IP
+        if: failure()
+        id: ip
+        uses: haythem/public-ip@v1.3
+
       - name: Upload
         env:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}

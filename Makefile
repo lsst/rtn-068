@@ -59,7 +59,9 @@ refresh-bib:
 	@echo
 	@echo "Commit the new bibliographies: git add lsstbib && git commit -m \"Update bibliographies.\""
 
-pop.csv:
+.FORCE:
+
+pop.csv: .FORCE
 	pip install -r operations_milestones/requirements.txt
 	( \
                 . operations_milestones/venv/bin/activate; \
