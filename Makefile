@@ -6,7 +6,7 @@ init:
 .PHONY:
 html: pop.csv
 	tox run -e html
-	cp pop.csv $(BUILDDIR)/html
+	cp pop.csv _build/html
 
 .PHONY:
 lint:
