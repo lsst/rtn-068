@@ -35,4 +35,5 @@ pop.csv: .FORCE
                 python operations_milestones/opsMiles.py --pop -q "and filter=23438"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
 	echo `date` >> index.rst
+	echo `date` >> pop.csv
 

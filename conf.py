@@ -3,5 +3,5 @@
 
 from documenteer.conf.technote import *  # noqa F401 F403
 
-exclude_patterns = ["*.md", "**/*md", ".tox/*"]
+exclude_patterns.extend(["*.md", "**/*md", ".tox/*"])
 
