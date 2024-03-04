@@ -31,8 +31,8 @@ jobs:
       - name: Build
         shell: bash
         env:
-          JIRA_USER: ${{ secrets.JIRA_USER }}
-          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
+          JIRA_USER: ${{ secrets.JIRA_CLOUD_USER }}
+          JIRA_PASSWORD: ${{ secrets.JIRA_CLOUD_TOKEN }}
         run: |
           (cd operations_milestones; git pull origin main)
           make html
