@@ -32,7 +32,7 @@ pop.csv: .FORCE
 	pip install -r operations_milestones/requirements.txt
 	( \
                 . operations_milestones/venv/bin/activate; \
-                python operations_milestones/opsMiles.py --pop -q "and filter=11380"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
+                python operations_milestones/opsMiles.py --pop -q "filter=11380"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
 	echo `date` >> index.rst
 	echo `date` >> pop.csv
